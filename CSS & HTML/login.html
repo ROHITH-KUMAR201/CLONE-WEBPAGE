@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In__Secure checkout-Apple</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script type="text/javascript" src="alert.js"></script>
+</head>
+<body> 
+    <script>  
+        function validateform(){  
+        var email=document.myform.email.value;
+        var password=document.myform.password.value; 
+        var email_val = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if(email==null||email==""){
+        alert("EMAIL ID CANNOT BE BLANK");
+        return false;
+        }
+        else if(!email_val.test(email)){
+        alert('Invalid email format please enter valid email id');
+        return false;
+        }else if(password.length<6||password==""){
+            alert("password must be atleast six character");
+            return false;
+        }
+        }
+        </script>
+    <header>
+        <nav class="navbar">
+            <a href="">
+                <h1>
+                <span style="color: silver;">APPLE</span>
+                <span style="color: red;">ORIGINALS</span>
+                </h1>
+            </a>
+            <ul>
+                <li><a href="index.html" class="white"><i style="color: silver;" class='bx bxs-home'></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="section">
+        <div class="wrapper">
+            <div class="logreg-box">
+                <div class="form-box login">
+                    <div class="logreg-title">
+                        <h2 style="color: silver;">APPLE STORE</h2>
+                        <P style="color: silver;font-weight: 500;">Sign in for faster checkout</P>
+                    </div>
+
+                    <form name="myform" method="post" onsubmit="return validateform()" action="validate.php">
+                        <div class="input-box">
+                            <span class="icon"><i style="color: silver;"class='bx bxs-envelope' ></i></span>
+                            <input type="email" name="email" required>
+                            <label style="color: silver;">Email</label> 
+                        </div>
+
+                        <div class="input-box">
+                            <span class="icon"><i style="color: silver;"class='bx bxs-lock-alt' ></i></span>
+                            <input type="password" name="password" required>
+                            <label style="color: silver;">Password</label>
+                        </div>
+
+                        <div class="remember-forget">
+                            <label><input type="checkbox">remember me</label>
+                            <form>
+                                <input type="button" value="Forget Password" onclick="getValue()" style="color: red;background-color: black;"/>
+                            </form>
+                        </div>
+
+                        <a href="index.html"><button type="submit" class="btn" onclick="validateform()">Login</button></a>
+
+                        <div class="logreg-link">
+                            <p>Don't have Apple ID? <a href="registration.html" class="register-link" style="color: red;text-decoration: underline;">Create yours.</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="media-options">
+                <a href="#">
+                    <i class='bx bxl-google'></i>
+                    <span>Login with google</span>
+                </a>
+            
+                <a href="#">
+                     <i class='bx bxs-cloud' ></i>
+                     <span>Login with Icloud</span>
+                </a>
+            </div> 
+        </div>
+    </section>
+</body>
+</html>
